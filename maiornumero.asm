@@ -50,7 +50,7 @@
 		ecall
 
 .data
-	VETOR: .space 96 			# Reservando 24 espaços para o vetor
+	VETOR: .space 96 			# Reservando 24 espaços para o vetor (4 vezes o número de espaços)
 	SIZE: .word 0
 	MAIOR: .word 0
 	prompt: .asciz "Digite o tamanho do vetor: "
