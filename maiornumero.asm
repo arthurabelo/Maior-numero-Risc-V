@@ -3,7 +3,7 @@
 	la s1, SIZE				# Carrega o endereço de SIZE no registrador s1
 	la s2, MAIOR				# Carrega o endereço do MAIOR no registrador s2
 	li t0, 0				# Armazena o valor imediato zero no registrador t0, servindo como contador para o vetor
-	
+
 	li a7, 4
 	la a0, prompt
 	ecall					# Imprime o texto para digitar o tamanho do vetor
@@ -52,7 +52,7 @@
 .data
 	VETOR: .space 96 			# Reservando 24 espaços para o vetor (4 vezes o número de espaços)
 	SIZE: .word 0
-	MAIOR: .word 0
+	MAIOR: .word -2147483648          	# Inicializa MAIOR com o menor valor possível para um inteiro de 32 bits
 	prompt: .asciz "Digite o tamanho do vetor: "
 	msg: .asciz "Digite o elemento do vetor: "
 	res: .asciz "O maior número é: "
