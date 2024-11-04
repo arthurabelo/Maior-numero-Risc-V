@@ -13,7 +13,7 @@
 	ecall					# Input para capturar tamanho do vetor
 	sw a0, 0(s1)
 	
-	INPUT_VETOR:
+	LOOP:
 		li a7, 4
 		la a0, msg
 		ecall				# Imprime o texto para digitar os elementos do vetor
@@ -39,7 +39,7 @@
 	INCREMENT_CHECK:
 		addi t0, t0, 1 			# Incrementa o contador
 		lw t5, 0(s1)			# Carrega a palavra contida na memória no endereço que está armazenado em s1(SIZE) para o registador t5
-		blt t0, t5, INPUT_VETOR		# Salta para LOOP se o "índice atual no vetor" for menor que SIZE, continuando a execução
+		blt t0, t5, LOOP		# Salta para LOOP se o "índice atual no vetor" for menor que SIZE, continuando a execução
 		li a7, 4			# Print string
 		la a0, res
 		ecall
